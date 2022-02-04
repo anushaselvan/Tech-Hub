@@ -1,15 +1,15 @@
 const { Schema, model } = require('mongoose');
+const bcrypt = require('bcrypt');
 const questionSchema = require('./Question');
 
 // Schema to create User model
 const userSchema = new Schema(
   {
     username: {
-      type: String,
-      required: true,
-      unique: true,
-      trim:true,
-    },
+        type: String,
+        required: true,
+        trim: true
+      },
     email: {
       type: String,
       unique: true,
@@ -21,24 +21,25 @@ const userSchema = new Schema(
       },
       required: [true, 'User email required'],
     },
-    city: {
+    password: {
         type: String,
         required: true,
+        minlength: 5
+      },
+    city: {
+        type: String,
         trim:true
     },
     tech1: {
         type: String,
-        required: true,
         trim:true
     },
     tech2:{
         type: String,
-        required: true,
         trim:true
     },
     tech3:{
         type: String,
-        required: true,
         trim:true
     },
     questions:[
@@ -62,7 +63,6 @@ const userSchema = new Schema(
   }
 );
 
-
 // Create a virtual property `followCount` that gets the number of followers per user
 userSchema
   .virtual('followCount')
@@ -70,6 +70,21 @@ userSchema
   .get(function () {
     return this.followers.length;
   });
+  
+// set up pre-save middleware to create password
+userSchema.pre('save', async function(next) {
+    if (this.isNew || this.isModified('password')) {
+      const saltRounds = 10;
+      this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+  
+    next();
+  });
+  
+  // compare the incoming password with the hashed password
+  userSchema.methods.isCorrectPassword = async function(password) {
+    return await bcrypt.compare(password, this.password);
+  };
 
 const User = model('user', userSchema);
 
