@@ -67,6 +67,13 @@ type Question{
         tag: String!
         username: String!
       ): Question
+      deleteQuestion(
+        questionText: String!
+        createdAt: String!
+        category: Boolean!
+        tag: String!
+        username: String!
+      ): Question
   }
 `;
 
