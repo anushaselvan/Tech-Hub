@@ -16,6 +16,7 @@ const path = require("path");
   });
   await server.start();
   server.applyMiddleware({ app, path: "/graphql" });
+  
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
