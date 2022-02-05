@@ -32,16 +32,16 @@ const userSchema = new Schema(
     },
     tech1: {
         type: String,
-        trim:true
-    },
-    tech2:{
+        trim: true,
+      },
+    tech2: {
         type: String,
-        trim:true
-    },
-    tech3:{
+        trim: true,
+      },
+    tech3: {
         type: String,
-        trim:true
-    },
+        trim: true,
+      },
     questions:[
         {
         type: Schema.Types.ObjectId,

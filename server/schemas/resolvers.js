@@ -8,22 +8,20 @@ const resolvers = {
        return await Question.find();
       // question.sort((a, b) => b.createdAt - a.createdAt);
     },
-    questions: async (parent, { category, tag }) => {
+    questions: async (parent, { active, tag }) => {
       const params = {};
 
-      if (category) {
-        params.category = category;
+      if (active) {
+        params.active = active;
       }
       if (tag) {
-        params.tag = {
-          $regex: tag
-        };
+        params.tag = tag;
       }
 
-      return await Question.find(params).populate('category');
+      return await Question.find(params).populate('active');
     },
     question: async (parent, { _id }) => {
-      return await Question.findById(_id).populate('category');
+      return await Question.findById(_id).populate('active');
     },
     user: async (parent, args, context) => {
       if (context.user) {
@@ -76,16 +74,13 @@ const resolvers = {
         if (context.user) {
            const updatedQuestion =  await Question.findByIdAndUpdate(
             { _id: context.user._id },
-            { $addToSet: { answers: answers } },
-           );
+            { $addToSet: { answers: answers }},
+            );
             return updatedQuestion;
         }
   
         throw new AuthenticationError('Not logged in');
       },
-    },
-
-
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -102,8 +97,8 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    }
-  }
+    },
+  },
 };
 
 module.exports = resolvers;

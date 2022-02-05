@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const { Question } = require('.');
+//const { Question } = require('.');
 const answerSchema = require('./Answer');
 
 // Schema to create Question model
@@ -15,9 +15,9 @@ const questionSchema = new Schema(
         type: Date, 
         default: Date.now,
     },
-    category: {
-        boolean: true,
-        required: true,
+    active: {
+      type: Boolean,
+      required: true,
     },
     tag: {
         type: String,

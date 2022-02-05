@@ -6,7 +6,7 @@ type Question{
     _id: ID
     questionText: String
     createdAt: String
-    category: Boolean
+    active: Boolean
     tag: String
     username: String
     answers: [Answer]
@@ -16,7 +16,7 @@ type Question{
     _id: ID
     answerBody: String
     username: String
-    createdAt: Date
+    createdAt: String
   }
 
   type User {
@@ -24,21 +24,23 @@ type Question{
     username: String!
     email: String!
     city: String
-    tech1: String
-    tech2: String
-    tech3: String
+    tech1: String,
+    tech2: String,
+    tech3: String,
     questions: [Question]
     followers: [User]
   }
 
   type Auth {
-    token: ID
+    token: ID!
     user: User
   }
 
   type Query {
     user: User
-    Question(_id: ID!): Question
+    question(_id: ID!): Question
+    questions: Question
+
   }
 
   type Mutation {
@@ -49,28 +51,31 @@ type Question{
           city: String,
           tech1: String,
           tech2: String,
-          tech3: String): Auth
-      updateUser(username: String!, 
+          tech3: String,
+          ): Auth
+      updateUser(
+          username: String!, 
           email: String!, 
           password: String!, 
           city: String,
           tech1: String,
           tech2: String,
-          tech3: String): User
+          tech3: String,
+          ): User
           
       login(email: String!, password: String!): Auth
       addAnswer(questions: [ID]!): Answer
       addQuestion(
         questionText: String!
         createdAt: String!
-        category: Boolean!
+        active: Boolean!
         tag: String!
         username: String!
       ): Question
       deleteQuestion(
         questionText: String!
         createdAt: String!
-        category: Boolean!
+        active: Boolean!
         tag: String!
         username: String!
       ): Question
