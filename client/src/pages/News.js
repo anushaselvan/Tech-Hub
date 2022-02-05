@@ -4,8 +4,7 @@ import React from "react";
 const News = () => {
   return (
     <div className="container">
-      Home Page
-    </div>
+News    </div>
   );
 };
 

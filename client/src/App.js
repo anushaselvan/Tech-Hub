@@ -49,14 +49,14 @@ function App() {
           <Provider store={store}>
             <Nav />
             <Routes>
-              <Route exact path="/" component={<Home/>} />
-              <Route path="/login" component={<Login/>} />
-              <Route path="/signup" component={<Signup/>} />
-              <Route path="/news" component={<News/>} />
-              <Route path="/questions" component={<Questions/>} />
-              <Route path="/Profile/:id" component={<Profile/>} />
-              <Route path="/donate" component={<Donate/>} />
-              <Route component={<NoMatch/>} />
+              <Route exact path="/" element={<Home/>} /> 
+              <Route exact path="/login" element={<Login/>} />
+              <Route exact path="/signup" element={<Signup/>} />
+              <Route exact path="/news" element={<News/>} />
+              <Route exact path="/questions" element={<Questions/>} />
+              <Route exact path="/Profile/:id" element={<Profile/>} />
+              <Route exact path="/donate" element={<Donate/>} />
+              <Route element={<NoMatch/>} />
             </Routes>
           </Provider>
         </div>

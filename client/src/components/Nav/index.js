@@ -3,6 +3,7 @@ import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import coffee from '../../assets/coffee.gif';
 
+
 function Nav() {
 
   function showNavigation() {
@@ -24,7 +25,7 @@ function Nav() {
       );
     } else {
       return (
-        <ul className="flex-row" justify-content="right">
+        <ul className="flex-row">
           <li className="mx-1">
             <Link to="/login">
               Login
@@ -35,7 +36,6 @@ function Nav() {
             <button>Signup</button>  
             </Link>
           </li>
-          
         </ul>
       );
     }
@@ -51,7 +51,7 @@ function Nav() {
       </h3>
       <ul className="flex-row">
           <li className="mx-1">
-            <Link to="/home">
+            <Link to="/">
               Home
             </Link>
           </li>
