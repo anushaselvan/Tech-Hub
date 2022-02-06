@@ -12,9 +12,12 @@ function Login(props) {
     event.preventDefault();
     try {
       const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
+        variables: { email: formState.email, password: formState.password }
       });
+      console.log("mutationresp:",mutationResponse);
       const token = mutationResponse.data.login.token;
+      console.log("mutationresp1:",token);
+
       Auth.login(token);
     } catch (e) {
       console.log(e);
