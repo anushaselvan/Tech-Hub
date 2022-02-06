@@ -55,12 +55,12 @@ const userSchema = new Schema(
         },
       ],
   },
-  {
+  /*{
     toJSON: {
       virtuals: true,
     },
     id: false,
-  }
+  }*/
 );
 
 // Create a virtual property `followCount` that gets the number of followers per user
@@ -86,6 +86,6 @@ userSchema.pre('save', async function(next) {
     return await bcrypt.compare(password, this.password);
   };
 
-const User = model('user', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;

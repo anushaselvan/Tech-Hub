@@ -63,8 +63,6 @@ const Questions = () => {
                   Submit Search
                 </button>
               </form>
-           
-      
       </div>
     </>
   );

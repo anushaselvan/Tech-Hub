@@ -30,12 +30,12 @@ const questionSchema = new Schema(
         },
     answers: [answerSchema],
   },
-  {
+/* {
     toJSON: {
       virtuals: true,
     },
     id: false,
-  }
+  }*/
 );
 
 
@@ -47,6 +47,6 @@ questionSchema
     return this.answers.length;
   });
 
-const Question = model('question', questionSchema);
+const Question = model('Question', questionSchema);
 
 module.exports = Question;

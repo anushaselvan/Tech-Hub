@@ -23,7 +23,7 @@ export const QUERY_QUESTIONS = gql`
 export const QUERY_USER = gql`
   {
     user {
-        _id: ID
+        _id
         username
         email
         city
