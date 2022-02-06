@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip } from '@chakra-ui/react';
+import {Tooltip , Input,Button, Box,Container,Textarea } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons'
 
 
@@ -51,19 +51,19 @@ const Questions = () => {
   return (
     <>
       <div>
-          <form>
-                <label>Question</label>
-                 <input
-                  type='text'
-                  placeholder='Ask'
-                />
-                <Tooltip label='Ask any question' fontSize='sm'><SearchIcon />
-</Tooltip>
-                <button type='submit' variant='success' size='lg'>
-                  Submit Search
-                </button>
-              </form>
-      </div>
+      <Container maxW='75%' centerContent>
+            <Box> 
+                <Tooltip label='Ask any question' fontSize='sm'>
+                  <Input  placeholder='' size='lg' />
+                </Tooltip>
+                  <Button colorScheme='teal'> Submit
+                  </Button> 
+            </Box><br></br>
+<Box bg='gray.100' w='100%' borderRadius='lg' p={4} color='Black'>
+  This is the Box
+</Box>       <br></br>
+<Textarea placeholder='Here is a sample placeholder' />
+</Container>      </div>
     </>
   );
 };
