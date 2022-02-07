@@ -19,12 +19,12 @@ import Donate from './pages/Donate';
 
 
 import Nav from './components/Nav';
-import { Provider } from 'react-redux';
-import store from "./utils/store";
+//import { Provider } from 'react-redux';
+//import store from "./utils/store";
 
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
+//const httpLink = createHttpLink({
+  //uri: '/graphql',
+//});
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
@@ -37,17 +37,17 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  uri: "http://localhost:3000/graphql", // or your graphql server uri
-  link: authLink.concat(httpLink),
+  uri: "http://localhost:3001/graphql", // or your graphql server uri
+  link: authLink,
   cache: new InMemoryCache(), 
 });
-
+console.log(client);
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Provider store={store}>
+          {/* <Provider store={store}> */}
             <Nav />
             <Routes>
               <Route exact path="/" element={<Home/>} /> 
@@ -59,7 +59,7 @@ function App() {
               <Route exact path="/donate" element={<Donate/>} />
               <Route element={<NoMatch/>} />
             </Routes>
-          </Provider>
+         {/* </Provider> */}
         </div>
       </Router>
     </ApolloProvider>

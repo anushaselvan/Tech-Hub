@@ -12,7 +12,7 @@ export const LOGIN = gql`
 `;
 export const ADD_USER = gql`
   mutation addUser(
-    $username: String!
+    $username: String
     $email: String!
     $password: String!
   ) {
@@ -29,20 +29,20 @@ export const ADD_USER = gql`
   }
 `;
 
-/*export const ADD_QUESTION = gql`
+export const ADD_QUESTION = gql`
   mutation addQuestion($questionText: String!
     $createdAt: String!
     $active: String!
     $tag: String!
-    $username: String!) {
+    $username: String) {
     addQuestion(
-        questionText: String!
-        createdAt: String!
-        active: String!
-        tag: String!
-        username: String!)
+        questionText: $questionText
+        createdAt: $createdAt
+        active: $active
+        tag: $tag
+        username: $username)
     }
-  }
+  
 `;
 
 export const ADD_ANSWER = gql`
@@ -51,9 +51,9 @@ export const ADD_ANSWER = gql`
     $username: String
     $createdAt: String) {
     addAnswer( 
-        answerBody: String
-        username: String
-        createdAt: String) {
+        answerBody: $answerBody
+        username: $username
+        createdAt: $createdAt) {
       savedAnswers{
         answerBody
         username
@@ -61,4 +61,4 @@ export const ADD_ANSWER = gql`
       }
     }
   }
-`;*/
+`;

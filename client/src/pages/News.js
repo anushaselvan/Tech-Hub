@@ -20,7 +20,7 @@ const news = {
               const newsData = items.map((news) => ({
                 title: news.volumeInfo.title,
                 description: news.volumeInfo.description,
-                link:news.link,
+                link: news.link,
               }));
       console.log(newsData)
     } 

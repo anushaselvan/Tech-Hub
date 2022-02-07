@@ -11,8 +11,9 @@ function Login(props) {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
+      console.log("formState",formState);
       const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password }
+        variables: { ...formState }
       });
       console.log("mutationresp:",mutationResponse);
       const token = mutationResponse.data.login.token;

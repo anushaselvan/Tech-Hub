@@ -45,8 +45,8 @@ function Nav() {
     <header className="flex-row px-1">
       <h3>
         <Link to="/">
-          <span > <img src={coffee} alt="coffee" width="30px"/></span>
-          Tech Hub
+        <span><img src={coffee} alt="coffee" width="30px"/></span> Tech Hub
+          
         </Link>
       </h3>
       <ul className="flex-row">
