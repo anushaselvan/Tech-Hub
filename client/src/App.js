@@ -15,7 +15,6 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import News from './pages/News';
-import Donate from './pages/Donate';
 
 
 import Nav from './components/Nav';
@@ -56,7 +55,6 @@ function App() {
               <Route exact path="/news" element={<News/>} />
               <Route exact path="/questions" element={<Questions/>} />
               <Route exact path="/Profile/:id" element={<Profile/>} />
-              <Route exact path="/donate" element={<Donate/>} />
               <Route element={<NoMatch/>} />
             </Routes>
          {/* </Provider> */}

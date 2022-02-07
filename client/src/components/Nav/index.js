@@ -2,6 +2,8 @@ import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import coffee from '../../assets/coffee.gif';
+import { Button } from '@chakra-ui/react';
+
 
 
 function Nav() {
@@ -33,7 +35,7 @@ function Nav() {
           </li>
           <li className="mx-1">
             <Link to="/signup">
-            <button>Signup</button>  
+            <Button colorScheme='teal'>Signup</Button> 
             </Link>
           </li>
         </ul>
@@ -63,11 +65,6 @@ function Nav() {
           <li className="mx-1">
             <Link to="/news">
               News
-            </Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/donate">
-              Donate
             </Link>
           </li>
           </ul>
