@@ -4,7 +4,7 @@ const typeDefs = gql`
  
 type Question{
     _id: ID
-    questionText: String
+    questionText: String!
     createdAt: String
     active: Boolean
     tag: String
@@ -59,16 +59,16 @@ type Question{
       addQuestion(
         questionText: String!
         createdAt: String
-        active: Boolean!
+        active: Boolean
         tag: String
         username: String!
       ): Question
       deleteQuestion(
         questionText: String!
         createdAt: String
-        active: Boolean!
+        active: Boolean
         tag: String
-        username: String
+        username: String!
       ): Question
   }
 `;

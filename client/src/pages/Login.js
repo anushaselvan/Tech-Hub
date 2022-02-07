@@ -14,11 +14,11 @@ import Auth from '../utils/auth';
     event.preventDefault();
     try {
       console.log("formState",formState);
-      const {mutationResponse} = await login({
+      const {data} = await login({
         variables: { ...formState }
       });
-      console.log("mutationresp:",mutationResponse);
-      const token = mutationResponse.login.token;
+      console.log("mutationresp:",data);
+      const token = data.login.token;
       console.log("mutationresp1:",token);
 
       Auth.login(token);

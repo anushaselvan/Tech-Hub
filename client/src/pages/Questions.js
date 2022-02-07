@@ -1,11 +1,87 @@
 import React, { useState } from 'react';
-import {Tooltip, Input,Button, Box,Container,Textarea } from '@chakra-ui/react';
+import {Tooltip, Input,Textarea,Button,FormControl, Box,Container } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMutation } from '@apollo/client';
 import { ADD_ANSWER, ADD_QUESTION } from '../utils/mutations';
 
-
 const Questions = () => {
+ 
+  const [formState, setFormState] = useState({
+    questionText: '',
+    //active: true,
+    username: '',
+  });
+  const [characterCount, setCharacterCount] = useState(0);
+
+  // Set up our mutation with an option to handle errors
+  const [addQuestion, { error }] = useMutation(ADD_QUESTION);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // On form submit, perform mutation and pass in form data object as arguments
+    // It is important that the object fields are match the defined parameters in `ADD_THOUGHT` mutation
+    try {
+      const { data } = addQuestion({
+        variables: { ...formState },
+      });
+
+      window.location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === 'questionText' && value.length <= 280) {
+      setFormState({ ...formState, [name]: value });
+      setCharacterCount(value.length);
+    } else if (name !== 'questionText') {
+      setFormState({ ...formState, [name]: value });
+    }
+  };
+
+  return (
+            <Container maxW='50%' centerContent>
+      <h2>Ask your Q here !</h2><br></br>
+
+
+      <FormControl onSubmit={handleFormSubmit}>
+
+      <Box bg='gray.300' borderRadius='lg' w='100%' p={4} color='white'>
+
+          
+            <Textarea placeholder='Question'
+        value={formState.questionText}
+        bg='white' marginBottom='10px' borderRadius='lg'
+        onChange={handleChange}
+        size='sm'
+      /><br></br>
+          <Input
+            placeholder="Username"
+            w='50%'   bg='white'  marginRight='10px'
+            value={formState.username}
+            onChange={handleChange}
+          />
+          <Button bg='teal' type="submit">
+            Submit
+          </Button>
+                  </Box>
+          
+        {error && (
+          <div className="col-12 my-3 bg-danger text-white p-3">
+            Something went wrong...
+          </div>
+        )}
+      </FormControl>
+      </Container>
+  );
+};
+
+
+/*const Questions = () => {
   /*const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const [addQuestion, { error, data }] = useMutation(ADD_QUESTION);
@@ -15,7 +91,7 @@ const Questions = () => {
   // create state for holding our search field data
   const [] = useState('');
 
-*/
+
  
 //const handleFormSubmit = async (event) => {
   //const [searchInput, setSearchInput] = useState('');
@@ -43,5 +119,5 @@ const Questions = () => {
   );
 };
 
-
+*/
 export default Questions;

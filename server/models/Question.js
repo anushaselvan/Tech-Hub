@@ -21,7 +21,7 @@ const questionSchema = new Schema(
     },
     active: {
       type: Boolean,
-      required: true,
+     // required: true,
     },
     tag: {
         type: String,

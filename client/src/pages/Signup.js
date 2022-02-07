@@ -6,21 +6,22 @@ import Auth from '../utils/auth';
 
 import { ADD_USER } from '../utils/mutations';
 
-function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+const Signup = () => {
+  const [formState, setFormState] = useState({ username: '',email: '', password: '' });
+
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await addUser({
+    const { data } = await addUser({
       variables: {
         email: formState.email,
         password: formState.password,
         username: formState.username,
       },
     });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
+    Auth.login(data.addUser.token);
+
   };
 
   const handleChange = (event) => {
@@ -73,6 +74,6 @@ function Signup(props) {
       </form>
     </div>
   );
-}
+};
 
 export default Signup;

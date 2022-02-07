@@ -50,12 +50,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
-/*const client = new ApolloClient({
-  uri: "http://localhost:3000/graphql", // or your graphql server uri
-  //uri: '/graphql',
-  cache: new InMemoryCache(), 
-});*/
 console.log(client);
 function App() {
   return (
