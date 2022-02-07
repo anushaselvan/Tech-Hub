@@ -6,13 +6,12 @@ export const QUERY_QUESTIONS = gql`
         _id
         questionText
         createdAt
-        tag
         username
         answers {
             _id
             answerBody
             username
-            createdAt
+            
         }
       }
     }

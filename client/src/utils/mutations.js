@@ -32,14 +32,15 @@ export const ADD_USER = gql`
 
 export const ADD_QUESTION = gql`
   mutation addQuestion($questionText: String!
-    $createdAt: String
-    $tag: String
+    $createdAt: String 
     $username: String) {
     addQuestion(
         questionText: $questionText
         createdAt: $createdAt
-        tag: $tag
         username: $username)
+        answers{
+          _id
+          answerBody        }
     }
   
 `;

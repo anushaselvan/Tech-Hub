@@ -12,7 +12,6 @@
 
 * {
   box-sizing: border-box;
-  font-style: oblique;
 }
 .bgImage {
   background-image: url("./assets/bg.jpg");
@@ -135,15 +134,25 @@ span[role="img"] {
 }
 
 form {
-  width: 40%;
+  width: 100%;
+
+}
+textarea {
+  color: black;
+  width: 100%;
+
+  border-radius: 5px;
+
+
 }
 
 input {
   font-size: 1rem;
   padding: 0.25rem;
+  width: 100%;
   border: 1px solid var(--dark);
   outline: none;
-  border-radius: 3px;
+  border-radius: 5px;
   transition: box-shadow 0.2s;
 }
 
