@@ -45,8 +45,10 @@ const News = () => {
 
 
   return (
-    <><br></br><h2 float="center">Today on the web!!</h2><br></br>
-    <Container maxW='2000' centerContent>
+    <div className="bgImage">
+    <Container maxW='60%'   centerContent>
+    <br></br><h2 float="center">Today on the web!!</h2><br></br>
+    <Box maxW='2000' centerContent>
   <Box padding='4' bg='gray.100' borderRadius='lg' maxW='5xl'>
   <Box
           mt='1'
@@ -70,11 +72,9 @@ const News = () => {
     does it bring benefits to the design team.
   </Box><br></br>
 
-</Container><br></br>
-    
+</Box><br></br>
+</Container></div>
 
-
-    </>
 
   );
 };

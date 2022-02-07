@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
+import {Container , FormLabel} from '@chakra-ui/react';
 
 import QuestionList from '../components/QuestionList';
 
@@ -11,11 +12,13 @@ const Questions = () => {
       const questions = data?.questions || [];
     
       return (
-        <main>        
+        <main>      <div className="bgImage">
+                  <Container maxW='50%'  bg='white' centerContent>
+
             <QuestionList
               questions={questions}
-              title="Some Feed for Thought(s)..."
-            />
+              title="View Questions"
+            /></Container></div>
             </main>
       );
     };

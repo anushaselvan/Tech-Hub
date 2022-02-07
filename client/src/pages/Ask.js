@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import {Tooltip, Input,Textarea,Button,FormControl, Box,Container } from '@chakra-ui/react';
+import {Tooltip, Input,Textarea,Button,FormControl, Box,Container , FormLabel} from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMutation } from '@apollo/client';
 import { ADD_ANSWER, ADD_QUESTION } from '../utils/mutations';
 
 const Ask = () => {
  
-  const [formState, setFormState] = useState({
+ const [formState, setFormState] = useState({
     questionText: '',
     //active: true,
     username: '',
   });
-  const [characterCount, setCharacterCount] = useState(0);
 
   // Set up our mutation with an option to handle errors
   const [addQuestion, { error }] = useMutation(ADD_QUESTION);
@@ -35,28 +34,26 @@ const Ask = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'questionText' && value.length <= 280) {
+    if (name === 'questionText') {
       setFormState({ ...formState, [name]: value });
-      setCharacterCount(value.length);
     } else if (name !== 'questionText') {
       setFormState({ ...formState, [name]: value });
     }
   };
 
   return (
+    <div className="bgImage">
+
             <Container maxW='50%' centerContent>
       <h2>Ask your Q here !</h2><br></br>
-
-
       <FormControl onSubmit={handleFormSubmit}>
-
       <Box bg='gray.300' borderRadius='lg' w='100%' p={4} color='white'>
+      <h2 color='black'>Ask your Q here !</h2><br></br>
 
-          
-            <Textarea placeholder='Question'
+            <Textarea name="questionText" placeholder='Question'
         value={formState.questionText}
-        bg='white' marginBottom='10px' borderRadius='lg'
-        onChange={handleChange}
+        bg='white' color='black'  marginBottom='10px' borderRadius='lg'
+         onChange={handleChange}
         size='sm'
       /><br></br>
          
@@ -65,13 +62,18 @@ const Ask = () => {
           </Button>
                   </Box>
           
-        {error && (
+        {error && ( 
           <div className="col-12 my-3 bg-danger text-white p-3">
             Something went wrong...
           </div>
-        )}
-      </FormControl>
-      </Container>
+        )} 
+      </FormControl><br></br>
+      <Box bg='gray.300' borderRadius='lg' w='100%' p={4} color='white'>
+      <FormControl onSubmit={handleFormSubmit}>
+  <FormLabel >{formState.questionText}</FormLabel>
+  </FormControl>
+</Box>
+      </Container></div>
   );
 };
 
