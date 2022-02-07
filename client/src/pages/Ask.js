@@ -71,7 +71,7 @@ console.log({data})
         {error && ( 
           <Badge colorScheme="red">
            <WarningIcon w={5} h={5} marginRight={2} />
- Something went wrong!
+           Something went wrong!
           </Badge>
         )} 
         </form>

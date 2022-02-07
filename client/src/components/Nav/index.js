@@ -63,11 +63,6 @@ function Nav() {
             </Link>
           </li>
           <li className="mx-1">
-            <Link to="/questions">
-              Questions
-            </Link>
-          </li>
-          <li className="mx-1">
             <Link to="/news">
               News
             </Link>

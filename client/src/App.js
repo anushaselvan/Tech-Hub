@@ -68,7 +68,7 @@ function App() {
               <Route exact path="/account" element={<Account/>} />
               <Route exact path="/news" element={<News/>} />
               <Route exact path="/ask" element={<Ask/>} />
-              <Route exact path="/Questions" element={<Questions/>} />
+              <Route exact path="/questions" element={<Questions/>} />
 
             </Routes>
             <Footer />

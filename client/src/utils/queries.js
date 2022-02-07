@@ -16,6 +16,22 @@ export const QUERY_QUESTIONS = gql`
       }
     }
 `;
+export const QUERY_QUESTION = gql`
+  query getQuestions {
+    question {
+        _id
+        questionText
+        createdAt
+        username
+        answers {
+            _id
+            answerBody
+            username
+            
+        }
+      }
+    }
+`;
 
 export const QUERY_USER = gql`
   {

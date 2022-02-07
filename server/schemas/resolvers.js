@@ -33,12 +33,9 @@ const resolvers = {
       return { token, user };
       },
    
-    addQuestion: async(parent, {questionText, username}, context) => {
-        if (context.user) {
+    addQuestion: async(parent, {questionText, username}) => {
            const newQuestion =  await Question.create({questionText, username});
           return newQuestion;
-        }
-        throw new AuthenticationError('Not logged in');
       },
 
     deleteQuestion: async(parent,args, context) => {
