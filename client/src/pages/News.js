@@ -6,13 +6,29 @@ import viewNews from '../utils/queries';
 const News = () => {
   // create state for holding returned google api data
   //const [searchedBooks, setSearchedBooks] = useState([]);
-const news = {
-  title: "",
-  description: "",
-  link: "",
-};
+  /*const Signup = () => {
+    const [formState, setFormState] = useState({ title: '',description: '', link: '' });
+  
+    const [addUser] = useMutation(ADD_USER);
+  
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+      const { data } = await addUser({
+        variables: {
+          email: formState.email,
+          password: formState.password,
+          username: formState.username,
+        },
+      });
+      Auth.login(data.addUser.token);
+  
+    };*/
+    const news = {
+      title: '',description: '', link: '' 
+    };
+
     try {
-      const response = viewNews();
+      const response =  viewNews();
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
@@ -20,7 +36,6 @@ const news = {
               const newsData = items.map((news) => ({
                 title: news.volumeInfo.title,
                 description: news.volumeInfo.description,
-                link: news.link,
               }));
       console.log(newsData)
     } 

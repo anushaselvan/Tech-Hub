@@ -14,8 +14,9 @@ import Home from './pages/Home';
 import Questions from './pages/Questions';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Profile from './pages/Profile';
+import Account from './pages/Account';
 import News from './pages/News';
+import Ask from './pages/Ask';
 
 
 import Nav from './components/Nav';
@@ -62,9 +63,11 @@ function App() {
               <Route exact path="/" element={<Home/>} /> 
               <Route exact path="/login" element={<Login/>} />
               <Route exact path="/signup" element={<Signup/>} />
+              <Route exact path="/account" element={<Account/>} />
               <Route exact path="/news" element={<News/>} />
-              <Route exact path="/questions" element={<Questions/>} />
-              <Route exact path="/Profile/:id" element={<Profile/>} />
+              <Route exact path="/ask" element={<Ask/>} />
+              <Route exact path="/Questions" element={<Questions/>} />
+
             </Routes>
          {/* </Provider> */}
         </div>

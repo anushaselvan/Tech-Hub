@@ -1,12 +1,12 @@
 import React from "react";
 
 
-const Profile = () => {
+const Account = () => {
   return (
     <div className="container">
-      Home Page
+     User
     </div>
   );
 };
 
-export default Profile;
+export default Account;
