@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import {Tooltip, Input,Textarea,Button,FormControl, Box,Container , FormLabel} from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { ADD_ANSWER, ADD_QUESTION } from '../utils/mutations';
+import QuestionList from '../components/QuestionList';
+import { QUERY_QUESTIONS } from '../utils/queries';
+
+
 
 const Ask = () => {
  
@@ -11,6 +15,8 @@ const Ask = () => {
     //active: true,
     username: '',
   });
+  const { loading, data } = useQuery(QUERY_QUESTIONS);
+      const questions = data?.questions || [];
 
   // Set up our mutation with an option to handle errors
   const [addQuestion, { error }] = useMutation(ADD_QUESTION);
@@ -68,10 +74,12 @@ const Ask = () => {
           </div>
         )} 
       </FormControl><br></br>
+      <QuestionList
+              questions={questions}
+              title="View Questions"
+            />
       <Box bg='gray.300' borderRadius='lg' w='100%' p={4} color='white'>
-      <FormControl onSubmit={handleFormSubmit}>
-  <FormLabel >{formState.questionText}</FormLabel>
-  </FormControl>
+     
 </Box>
       </Container></div>
   );
