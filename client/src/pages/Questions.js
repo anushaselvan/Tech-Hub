@@ -23,7 +23,7 @@ const Questions = () => {
   return (
     <>
       <div>
-      <Container maxW='75%' centerContent>
+      <Container maxW='1000px' centerContent>
             <Box> 
                 <Tooltip label='Ask any question' fontSize='sm'>
                   <Input  placeholder='' size='lg' />

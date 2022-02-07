@@ -6,11 +6,12 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
+import { ApolloLink } from '@apollo/client';
+
 import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
 import Questions from './pages/Questions';
-import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
@@ -21,25 +22,40 @@ import Nav from './components/Nav';
 //import { Provider } from 'react-redux';
 //import store from "./utils/store";
 
-//const httpLink = createHttpLink({
-  //uri: '/graphql',
-//});
+/*
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+const link = ApolloLink.from([
+  httpLink,
+  authLink,
+
+])*/
+const httpLink = createHttpLink({
+  uri: "/graphql",
+});
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
 
 const client = new ApolloClient({
-  uri: "http://localhost:3001/graphql", // or your graphql server uri
-  link: authLink,
-  cache: new InMemoryCache(), 
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
 });
+
+
+/*const client = new ApolloClient({
+  uri: "http://localhost:3000/graphql", // or your graphql server uri
+  //uri: '/graphql',
+  cache: new InMemoryCache(), 
+});*/
 console.log(client);
 function App() {
   return (
@@ -55,7 +71,6 @@ function App() {
               <Route exact path="/news" element={<News/>} />
               <Route exact path="/questions" element={<Questions/>} />
               <Route exact path="/Profile/:id" element={<Profile/>} />
-              <Route element={<NoMatch/>} />
             </Routes>
          {/* </Provider> */}
         </div>

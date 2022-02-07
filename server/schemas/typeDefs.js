@@ -39,7 +39,7 @@ type Question{
   type Query {
     user: User
     question(_id: ID!): Question
-    questions: Question
+    questions: [Question]
 
   }
 
@@ -52,32 +52,23 @@ type Question{
           tech1: String,
           tech2: String,
           tech3: String,
-          ): Auth
-      updateUser(
-          username: String!, 
-          email: String!, 
-          password: String!, 
-          city: String,
-          tech1: String,
-          tech2: String,
-          tech3: String,
-          ): User
-          
+          ): Auth  
       login(email: String!, password: String!): Auth
-      addAnswer(questions: [ID]!): Answer
+      addAnswer(questions: [ID]!): Question
+      deleteAnswer(questions: [ID]!): Question
       addQuestion(
         questionText: String!
-        createdAt: String!
+        createdAt: String
         active: Boolean!
-        tag: String!
+        tag: String
         username: String!
       ): Question
       deleteQuestion(
         questionText: String!
-        createdAt: String!
+        createdAt: String
         active: Boolean!
-        tag: String!
-        username: String!
+        tag: String
+        username: String
       ): Question
   }
 `;

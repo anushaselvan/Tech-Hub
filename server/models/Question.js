@@ -1,6 +1,8 @@
 const { Schema, model } = require('mongoose');
 //const { Question } = require('.');
 const answerSchema = require('./Answer');
+const dateFormat = require('../utils/dateFormat');
+
 
 // Schema to create Question model
 const questionSchema = new Schema(
@@ -10,10 +12,12 @@ const questionSchema = new Schema(
         required: true,
         min_length: 1,
         max_length: 280,
+        trim: true,
     },
     createdAt: {
         type: Date, 
         default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
     },
     active: {
       type: Boolean,
@@ -21,7 +25,6 @@ const questionSchema = new Schema(
     },
     tag: {
         type: String,
-        required: true,
     },
     username:
         {

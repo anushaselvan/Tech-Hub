@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-function Login(props) {
+//function Login(props) {
+  const Login = () => {
+
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
 
@@ -12,11 +14,11 @@ function Login(props) {
     event.preventDefault();
     try {
       console.log("formState",formState);
-      const mutationResponse = await login({
+      const {mutationResponse} = await login({
         variables: { ...formState }
       });
       console.log("mutationresp:",mutationResponse);
-      const token = mutationResponse.data.login.token;
+      const token = mutationResponse.login.token;
       console.log("mutationresp1:",token);
 
       Auth.login(token);
@@ -32,7 +34,8 @@ function Login(props) {
       [name]: value,
     });
   };
-
+  
+  
   return (
     <div className="container my-1">
       <Link to="/signup">← Go to Signup</Link><br></br><br></br>
@@ -70,6 +73,6 @@ function Login(props) {
       </form>
     </div>
   );
-}
+};
 
 export default Login;
