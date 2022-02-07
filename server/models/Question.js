@@ -19,10 +19,7 @@ const questionSchema = new Schema(
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp),
     },
-    active: {
-      type: Boolean,
-     // required: true,
-    },
+   
     tag: {
         type: String,
     },

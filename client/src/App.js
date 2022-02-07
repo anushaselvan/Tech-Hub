@@ -20,6 +20,8 @@ import Ask from './pages/Ask';
 
 
 import Nav from './components/Nav';
+import Footer from './components/Footer';
+
 //import { Provider } from 'react-redux';
 //import store from "./utils/store";
 
@@ -69,6 +71,7 @@ function App() {
               <Route exact path="/Questions" element={<Questions/>} />
 
             </Routes>
+            <Footer />
          {/* </Provider> */}
         </div>
       </Router>

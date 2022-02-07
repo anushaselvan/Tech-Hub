@@ -1,4 +1,6 @@
 import React from 'react';
+import {Tooltip, Input,Textarea,Button,FormLabel, Badge, Box,Avatar,Container } from '@chakra-ui/react';
+
 
 const QuestionList = ({ questions, title }) => {
   if (!questions.length) {
@@ -7,19 +9,20 @@ const QuestionList = ({ questions, title }) => {
 
   return (
     <div>
-      <h3>{title}</h3>
       {questions &&
         questions.map((question) => (
-          <div key={question._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
-              {question.username} <br />
-              <span style={{ fontSize: '1rem' }}>
-                asked this question at {question.createdAt}
-              </span>
-            </h4>
-            <div className="card-body bg-light p-2">
+          <div key={question._id}>
+            <Box bg='gray.300' borderRadius='lg' w='100%' h='200px'  p={4} color='black'>
+            
+                <Avatar bg='teal' marginRight='10px'/><span fontStyle='oblique'>
+
+                {question.username}</span> <br />
+                <span style={{ fontSize: '1rem' }}>
+                </span>
+            <div >
               <p>{question.questionText}</p>
-            </div>
+              <FormLabel float='right'>  {question.createdAt} </FormLabel>
+            </div></Box><br></br>
           </div>
         ))}
     </div>

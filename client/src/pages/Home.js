@@ -7,8 +7,8 @@ const Home = () => {
       <div className="bgImage">
       <Container maxW='2000' centerContent>
       <SimpleGrid columns={2} spacingX='140px' spacingY='80px' >
-      <Box maxW='sm' > </Box>
-      <Box maxW='sm' > </Box>
+      <Box maxW='sm' p={4}> </Box>
+      <Box maxW='sm' p={4}> </Box>
 
       <Box maxW='sm' bg='teal' borderWidth='1px' borderRadius='lg' overflow='hidden'>
         A public platform building the 

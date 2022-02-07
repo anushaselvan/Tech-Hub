@@ -6,7 +6,6 @@ export const QUERY_QUESTIONS = gql`
         _id
         questionText
         createdAt
-        active
         tag
         username
         answers {

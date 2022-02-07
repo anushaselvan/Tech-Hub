@@ -7,14 +7,14 @@ const questionSeeds = require('./questionSeeds.json');
 db.once('open', async () => {
     await User.create({
         username: 'Washington',
-        email: 'yyy@testmail.com',
+        email: 'yyy@test.com',
         password: 'pass12345',
         
       });
     
       await User.create({
         username: 'Holt',
-        email: 'ttt@testmail.com',
+        email: 'ttt@test.com',
         password: 'pass12345'
       });
     

@@ -5,7 +5,6 @@ import {
 
 const initalState = {
   question: [],
-  active: false,
   answer: [],
 }
 
@@ -14,7 +13,6 @@ export default function reducer (state = initalState, action) {
     case ADD_QUESTION:
       return {
         ...state,
-        active: true,
         question: [...state.question, action.question],
       };
 
