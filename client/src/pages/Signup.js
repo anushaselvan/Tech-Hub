@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
+import {Tooltip, Text,Heading,Container,Button,FormLabel, Badge, Box,Avatar } from '@chakra-ui/react';
 
 
 import { ADD_USER } from '../utils/mutations';
@@ -33,10 +34,15 @@ const Signup = () => {
   };
 
   return (
-    <div className="container my-1">
+    <div className="bgImage">
+
+       <Container maxW='50%' centerContent>
+
+     <Box bg='gray.300' borderRadius='lg' w='100%' h='350px' marginTop={20}  p={4} color='black'>
       <Link to="/login">← Go to Login</Link><br></br><br></br>
 
-      <h2>Signup</h2>
+       <Heading  size="md">Signup</Heading>
+
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
           <label htmlFor="username">Username:</label>
@@ -69,9 +75,10 @@ const Signup = () => {
           />
         </div>
         <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+          <button  type="submit">Submit</button>
         </div>
       </form>
+      </Box></Container>
     </div>
   );
 };

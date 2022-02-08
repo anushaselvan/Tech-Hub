@@ -2,7 +2,10 @@ import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import coffee from '../../assets/coffee.gif';
-import { Button } from '@chakra-ui/react';
+import { Button , Avatar, AvatarBadge} from '@chakra-ui/react';
+
+
+
 
 
 
@@ -11,12 +14,14 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        
+        <div className="login">
         <ul className="flex-row">
            <li className="mx-1">
-            <Link to="/account/:id">
-              Account
-            </Link>
+            <Link to="/account/">
+            <Avatar w={10} h={10}>
+    <AvatarBadge boxSize='1rem'  bg='green.500' />
+  </Avatar>            
+  </Link>
             </li>
           <li className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
@@ -24,22 +29,26 @@ function Nav() {
               Logout
             </a>
           </li>
-        </ul>
+        </ul></div>
       );
     } else {
       return (
+        <div className="login">
+
         <ul className="flex-row">
           <li className="mx-1">
             <Link to="/login">
               Login
             </Link>
           </li>
+          <li>/</li>
           <li className="mx-1">
             <Link to="/signup">
-            <Button colorScheme='teal'>Signup</Button> 
+            {/* <Button colorScheme='teal'>Signup</Button>  */} Signup
             </Link>
           </li>
         </ul>
+        </div>
       );
     }
   }
@@ -51,7 +60,7 @@ function Nav() {
         <span><img src={coffee} alt="coffee" width="30px"/></span> Tech Hub
           
         </Link>
-      </h3>
+      </h3><div className="navStyle">
       <ul className="flex-row">
           <li className="mx-1">
             <Link to="/">
@@ -68,7 +77,7 @@ function Nav() {
               News
             </Link>
           </li>
-          </ul>
+          </ul></div>
       <nav>
         {showNavigation()}
       </nav>

@@ -10,31 +10,26 @@ const Home = () => {
       <Box maxW='sm' p={4}> </Box>
       <Box maxW='sm' p={4}> </Box>
 
-      <Box maxW='sm' bg='teal' borderWidth='1px' borderRadius='lg' p={6} overflow='hidden'>
+      <Box maxW='sm' bg='teal' borderWidth='1px' h="150px" borderRadius='lg' p={8} overflow='hidden'>
       <Heading as='h4' size='md' >
       A public platform building the 
               definitive collection of coding questions & answers.  </Heading>
        </Box>
 
-        <Box maxW='sm' bg='teal' borderWidth='1px' borderRadius='lg' p={6} overflow='hidden'>
-        A community-based space to find and contribute answers to technical
-        challenges, and one 
-        of the most popular websites in the world.</Box>
+        <Box maxW='sm' bg='teal' borderWidth='1px' h="150px" borderRadius='lg' p={8} overflow='hidden'>
+        <Heading as='h4' size='md' >
+
+        Find trusted answers faster, engage with product experts, and share 
+        knowledge around the technologies you use most.</Heading></Box>
+        <Box maxW='sm' bg='teal' borderWidth='1px'  h="150px"borderRadius='lg' p={8} overflow='hidden'>
+        <Heading as='h4' size='md' >
+
+        A space to showcase your best/fun projects and receive feedback.</Heading></Box>
 
 
-        <Box maxW='sm' bg='teal' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-        A public platform building the 
-              definitive collection of coding questions & answers
-        A community-based space to find and contribute answers to technical
-        challenges, and one 
-        of the most popular websites in the world.</Box>
-
-        <Box maxW='sm' bg='teal' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-        A public platform building the 
-              definitive collection of coding questions & answers
-        A community-based space to find and contribute answers to technical
-        challenges, and one 
-        of the most popular websites in the world.</Box>
+        <Box maxW='sm' bg='teal' borderWidth='1px'  h="150px"borderRadius='lg' p={8} overflow='hidden'>
+        <Heading as='h4' size='md' >
+        Increase productivity & Collaborate better in a remote-first world.</Heading></Box>
         <Box maxW='sm' > </Box>
 
 </SimpleGrid>

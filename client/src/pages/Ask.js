@@ -25,14 +25,13 @@ const Ask = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // On form submit, perform mutation and pass in form data object as arguments
-    // It is important that the object fields are match the defined parameters in `ADD_QUESTION` mutation
+   console.log(formState);
     try {
       const { data } = await addQuestion({
         variables: { ...formState }
       });
 console.log({data})
-     // window.location.reload();
+     window.location.reload();
     } catch (err) {
       console.error(err);
     }

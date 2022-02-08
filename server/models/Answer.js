@@ -11,12 +11,10 @@ const answerSchema = new Schema(
     },
     answerBody: {
         type: String,
-        required: true,
         max_length: 280,
     },
     username:{
         type: String,
-        required: true,
     },
     createdAt:{
         type: Date,

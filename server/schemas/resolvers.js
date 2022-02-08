@@ -15,10 +15,7 @@ const resolvers = {
       user: async (parent, args, context) => {
         if (context.user) {
           const user = await User.findOne(context.user._id)
-          //.populate({
-           // path: 'questions',
-          //  populate: 'category'
-        //  });
+          
           return user;
         }
         throw new AuthenticationError('Not logged in');
@@ -33,7 +30,9 @@ const resolvers = {
       return { token, user };
       },
    
-    addQuestion: async(parent, {questionText, username}) => {
+    addQuestion: async(parent, {questionText, username}, context) => {
+     // console.log(context)
+     // const username= "bob";
            const newQuestion =  await Question.create({questionText, username});
           return newQuestion;
       },
@@ -67,7 +66,7 @@ const resolvers = {
     throw new AuthenticationError('Not logged in');
     },
     login: async (parent, { email, password }) => {
-      console.log(email,password);
+     // console.log(email,password);
       const user = await User.findOne({ email });
 
       if (!user) {

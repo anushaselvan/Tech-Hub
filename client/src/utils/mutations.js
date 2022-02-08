@@ -29,21 +29,18 @@ export const ADD_USER = gql`
     }
   }
 `;
-
 export const ADD_QUESTION = gql`
-  mutation addQuestion($questionText: String!
-    $createdAt: String 
-    $username: String) {
-    addQuestion(
-        questionText: $questionText
-        createdAt: $createdAt
-        username: $username)
-        answers{
-          _id
-          answerBody        }
-    }
-  
-`;
+ mutation addQuestion($questionText: String!, $username: String) {
+  addQuestion(questionText: $questionText, username: $username) {
+    questionText
+    username
+    _id
+  }
+
+}`;
+
+
+
 
 export const ADD_ANSWER = gql`
   mutation addAnswer( 

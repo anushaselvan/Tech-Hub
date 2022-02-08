@@ -17,20 +17,14 @@ export const QUERY_QUESTIONS = gql`
     }
 `;
 export const QUERY_QUESTION = gql`
-  query getQuestion {
-    question {
-        _id
-        questionText
-        createdAt
-        username
-        answers {
-            _id
-            answerBody
-            username
-            
-        }
-      }
-    }
+query question($questionId: ID!) {
+  question(questionId: $questionId) {
+    _id
+    questionText
+    username
+    createdAt
+  }
+}
 `;
 
 export const QUERY_USER = gql`

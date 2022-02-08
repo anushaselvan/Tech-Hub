@@ -1,14 +1,13 @@
 import React from 'react';
-import {Tooltip, Input,Textarea,Container,FormLabel, Badge, Box,Avatar } from '@chakra-ui/react';
+import {Tooltip, Input,Textarea,Container,Button,FormLabel, Badge, Box,Avatar } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
-import { ArrowLeftIcon, CheckIcon, DeleteIcon, WarningIcon } from '@chakra-ui/icons'
+import { ArrowLeftIcon, CheckIcon, DeleteIcon,AddIcon, WarningIcon } from '@chakra-ui/icons'
 
 const ViewQuestion = ({ question }) => {
   
 
   return (
     <div>
-
             <Box bg='gray.300' borderRadius='lg' w='100%' h='200px' marginTop={20}  p={4} color='black'>
             <div key={question.questionId}>
 
@@ -29,6 +28,7 @@ const ViewQuestion = ({ question }) => {
             </div>
             </div>
 </Box><br></br>
+<Button float="right"><AddIcon>Answer</AddIcon></Button>
     </div>
   );
 };

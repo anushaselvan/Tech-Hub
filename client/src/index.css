@@ -24,6 +24,29 @@
   height:1000px;
   background-blend-mode:soft-light;
 }
+.navStyle ul {
+  margin: 10px 200px;
+  font-size: 20px;
+}
+.login ul{
+  float: right;
+  margin: 10px 0 10px 600px;
+
+  font-size: 20px;
+}
+form button {
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.25rem 1rem;
+  border-radius: .5rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 1px;
+  background-color: teal;
+  color: black;
+}
 
 body {
   min-height: 100%;
@@ -113,8 +136,8 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondary);
-  color: var(--primary);
+  background-color: teal;
+  color: black;
 }
 
 button:hover {
@@ -236,8 +259,7 @@ input:focus {
     width: 100%;
   }
 }
-.login{
-float: right;}
+
 .Footer {
   position:fixed;
   left: 0;

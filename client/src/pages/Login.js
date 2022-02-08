@@ -3,6 +3,8 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
+import {Tooltip, Text,Heading,Container,Button,FormLabel, Badge, Box,Avatar } from '@chakra-ui/react';
+
 
 //function Login(props) {
   const Login = () => {
@@ -37,13 +39,17 @@ import Auth from '../utils/auth';
   
   
   return (
-    <div className="container my-1">
+    <div className="bgImage">
+           <Container maxW='50%' centerContent>
+
+     <Box bg='gray.300' borderRadius='lg' w='100%' h='300px' marginTop={20}  p={4} color='black'>
+
       <Link to="/signup">← Go to Signup</Link><br></br><br></br>
 
-      <h2>Login</h2>
+      <Heading  size="md">Login</Heading>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
+          <label htmlFor="email">Email address:</label> 
           <input
             placeholder="youremail@test.com"
             name="email"
@@ -71,6 +77,7 @@ import Auth from '../utils/auth';
           <button type="submit">Submit</button>
         </div>
       </form>
+      </Box></Container>
     </div>
   );
 };

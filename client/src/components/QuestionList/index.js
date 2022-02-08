@@ -18,7 +18,7 @@ const QuestionList = ({ questions, title }) => {
 
                 <Text as='i'>{question.username}</Text>
 </span> 
-                <Link to="/questions">
+                <Link to={`/questions/${question._id}`}>
               <ArrowRightIcon float="right" w={4} h={4} /></Link>
                 <br />
                 <span style={{ fontSize: '1rem' }}>

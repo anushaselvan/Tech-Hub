@@ -36,7 +36,7 @@ type Question{
 
   type Query {
     user: User
-    question(_id: ID!): Question
+    question(questionId: ID!): Question
     questions: [Question]
 
   }
@@ -55,13 +55,11 @@ type Question{
       addAnswer(questions: [ID]!): Question
       deleteAnswer(questions: [ID]!): Question
       addQuestion(
-        questionText: String!
-        createdAt: String
+        questionText: String!,
         username: String
       ): Question
       deleteQuestion(
         questionText: String!
-        username: String
       ): Question
   }
 `;
