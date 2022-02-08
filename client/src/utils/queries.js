@@ -17,7 +17,7 @@ export const QUERY_QUESTIONS = gql`
     }
 `;
 export const QUERY_QUESTION = gql`
-  query getQuestions {
+  query getQuestion {
     question {
         _id
         questionText

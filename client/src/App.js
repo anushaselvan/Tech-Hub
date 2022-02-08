@@ -65,13 +65,13 @@ function App() {
               <Route exact path="/" element={<Home/>} /> 
               <Route exact path="/login" element={<Login/>} />
               <Route exact path="/signup" element={<Signup/>} />
-              <Route exact path="/account" element={<Account/>} />
+              <Route exact path="/account/:id" element={<Account/>} />
               <Route exact path="/news" element={<News/>} />
               <Route exact path="/ask" element={<Ask/>} />
               <Route exact path="/questions" element={<Questions/>} />
 
             </Routes>
-            <Footer />
+            {/* <Footer /> */}
          {/* </Provider> */}
         </div>
       </Router>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import {Tooltip, Input,Textarea,Button,FormControl,Form,Formik, Box,Container ,Badge, FormLabel} from '@chakra-ui/react';
-import { ArrowRightIcon, CheckIcon, DeleteIcon, WarningIcon } from '@chakra-ui/icons'
+import {Button,FormControl,Form,Formik, Box,Container ,Badge, FormLabel} from '@chakra-ui/react';
+import {  WarningIcon } from '@chakra-ui/icons'
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useMutation, useQuery } from '@apollo/client';
@@ -28,8 +28,8 @@ const Ask = () => {
     // On form submit, perform mutation and pass in form data object as arguments
     // It is important that the object fields are match the defined parameters in `ADD_QUESTION` mutation
     try {
-      const { data } = addQuestion({
-        variables: { ...formState },
+      const { data } = await addQuestion({
+        variables: { ...formState }
       });
 console.log({data})
      // window.location.reload();
@@ -51,7 +51,7 @@ console.log({data})
   return (
     <div className="bgImage">
 
-            <Container maxW='50%' centerContent>
+     <Container maxW='50%' centerContent>
       <h2>Ask your Q here !</h2><br></br>
       <form onSubmit={handleFormSubmit}>
       <Box bg='gray.300' borderRadius='lg' w='100%' p={4} color='black'>

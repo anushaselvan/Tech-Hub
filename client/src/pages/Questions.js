@@ -14,7 +14,7 @@ const Question = () => {
       return (
         <main>     
            <div className="bgImage">
-            <Container maxW='50%'  bg='white' centerContent>
+            <Container maxW='50%' centerContent>
             <ViewQuestion
               question={question}
               title="View Question"
