@@ -1,82 +1,81 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Question } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Question } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-      questions: async () => {
-        return await Question.find().sort({ createdAt: -1 });
-      },
+    questions: async () => {
+      return await Question.find().sort({ createdAt: -1 });
+    },
 
-      question: async (parent, { questionId}) => {
-        return await Question.findOne({_id: questionId});
-      },
-   
-      user: async (parent, args, context) => {
-        if (context.user) {
-          const user = await User.findOne(context.user._id)
-          
-          return user;
-        }
-        throw new AuthenticationError('Not logged in');
-      },
-      },
+    question: async (parent, { questionId }) => {
+      return await Question.findOne({ _id: questionId });
+    },
+
+    user: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id);
+
+        return user;
+      }
+      throw new AuthenticationError("Not logged in");
+    },
+  },
 
   Mutation: {
-
-    addUser: async (parent, { username, email, password}) => {
-      const user = await User.create({ username, email, password});
+    addUser: async (parent, { username, email, password }) => {
+      const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
-      },
-   
-    addQuestion: async(parent, {questionText, username}, context) => {
-     // console.log(context)
-     // const username= "bob";
-           const newQuestion =  await Question.create({questionText, username});
-          return newQuestion;
-      },
+    },
 
-    deleteQuestion: async(parent,args, context) => {
-        if (context.user) {
+    addQuestion: async (parent, { questionText, username }, context) => {
+      // console.log(context)
+      // const username= "bob";
+      const newQuestion = await Question.create({ questionText, username });
+      return newQuestion;
+    },
+
+    deleteQuestion: async (parent, args, context) => {
+      if (context.user) {
         return Question.findOneAndDelete(args);
       }
-      throw new AuthenticationError('Not logged in');
-      },
+      throw new AuthenticationError("Not logged in");
+    },
 
     addAnswer: async (parent, answers, context) => {
-        if (context.user) {
-           const updatedQuestion =  await Question.findOneAndUpdate(
-            { _id: context.user._id },
-            { $addToSet: { answers: answers }},
-            );
-            return updatedQuestion;
-        }
-  
-        throw new AuthenticationError('Not logged in');
-        },
-      deleteAnswer: async(parent,{ questionId, answerId}, context) => {
-        if (context.user) {
+      if (context.user) {
+        const updatedQuestion = await Question.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { answers: answers } }
+        );
+        return updatedQuestion;
+      }
+
+      throw new AuthenticationError("Not logged in");
+    },
+    deleteAnswer: async (parent, { questionId, answerId }, context) => {
+      if (context.user) {
         return Question.findOneAndUpdate(
           { _id: questionId },
           { $pull: { answers: { _id: answerId } } },
           { new: true }
         );
-    }
-    throw new AuthenticationError('Not logged in');
+      }
+      throw new AuthenticationError("Not logged in");
     },
     login: async (parent, { email, password }) => {
-     // console.log(email,password);
+      // console.log(email,password);
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
@@ -87,7 +86,7 @@ const resolvers = {
 };
 
 module.exports = resolvers;
-    /* updateUser: async (parent, args, context) => {
+/* updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });
       }
@@ -107,4 +106,3 @@ module.exports = resolvers;
 
       return await Question.find(params).populate('active');
     },*/
-
