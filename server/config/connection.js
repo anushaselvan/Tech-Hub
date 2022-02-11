@@ -1,16 +1,12 @@
-const mongoose = require('mongoose');
-console.log("connection:",mongoose.connection.readyState);
+const mongoose = require("mongoose");
+console.log("connection:", mongoose.connection.readyState);
 
-
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/techhub', {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/techhub", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   //useCreateIndex: true,
- // useFindAndModify: false
+  // useFindAndModify: false
 });
-console.log("connection:",mongoose.connection.readyState);
-
-
+console.log("connection:", mongoose.connection.readyState);
 
 module.exports = mongoose.connection;
-

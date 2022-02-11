@@ -1,39 +1,26 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import { ApolloLink } from '@apollo/client';
+} from "@apollo/client";
+import { ApolloLink } from "@apollo/client";
 
-import { setContext } from '@apollo/client/link/context';
+import { setContext } from "@apollo/client/link/context";
 
-import Home from './pages/Home';
-import Questions from './pages/Questions';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Account from './pages/Account';
-import News from './pages/News';
-import Ask from './pages/Ask';
+import Home from "./pages/Home";
+import Questions from "./pages/Questions";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Account from "./pages/Account";
+import News from "./pages/News";
+import Ask from "./pages/Ask";
 
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-
-//import { Provider } from 'react-redux';
-//import store from "./utils/store";
-
-/*
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
-const link = ApolloLink.from([
-  httpLink,
-  authLink,
-
-])*/
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -60,19 +47,18 @@ function App() {
       <Router>
         <div>
           {/* <Provider store={store}> */}
-            <Nav />
-            <Routes>
-              <Route exact path="/" element={<Home/>} /> 
-              <Route exact path="/login" element={<Login/>} />
-              <Route exact path="/signup" element={<Signup/>} />
-              <Route exact path="/account" element={<Account/>} />
-              <Route exact path="/news" element={<News/>} />
-              <Route exact path="/ask" element={<Ask/>} />
-              <Route exact path="/questions/:id" element={<Questions/>} />
-
-            </Routes>
-            {/* <Footer /> */}
-         {/* </Provider> */}
+          <Nav />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/account" element={<Account />} />
+            <Route exact path="/news" element={<News />} />
+            <Route exact path="/ask" element={<Ask />} />
+            <Route exact path="/questions/:id" element={<Questions />} />
+          </Routes>
+          <Footer />
+          {/* </Provider> */}
         </div>
       </Router>
     </ApolloProvider>

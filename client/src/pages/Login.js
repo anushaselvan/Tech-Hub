@@ -3,17 +3,7 @@ import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
-import {
-  Tooltip,
-  Text,
-  Heading,
-  Container,
-  Button,
-  FormLabel,
-  Badge,
-  Box,
-  Avatar,
-} from "@chakra-ui/react";
+import { Heading, Container, Box } from "@chakra-ui/react";
 
 //function Login(props) {
 const Login = () => {

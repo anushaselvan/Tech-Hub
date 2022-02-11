@@ -1,25 +1,9 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { Container, FormLabel } from "@chakra-ui/react";
-import {
-  Tooltip,
-  Input,
-  Button,
-  Textarea,
-  Badge,
-  Box,
-  Avatar,
-} from "@chakra-ui/react";
+import { Button, Box, Avatar } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import {
-  ArrowLeftIcon,
-  CheckIcon,
-  DeleteIcon,
-  AddIcon,
-  WarningIcon,
-} from "@chakra-ui/icons";
-
-import ViewQuestion from "../components/Question";
+import { ArrowLeftIcon, DeleteIcon } from "@chakra-ui/icons";
 
 import { QUERY_QUESTION } from "../utils/queries";
 import { useParams } from "react-router-dom";

@@ -1,28 +1,9 @@
-import React, { useState } from "react";
-import { Box, Badge, Link, Container, Heading } from "@chakra-ui/react";
+import React from "react";
+import { Box, Link, Container, Heading } from "@chakra-ui/react";
 import viewNews from "../utils/queries";
 import { Divider } from "@chakra-ui/react";
 
 const News = () => {
-  // create state for holding returned google api data
-  //const [searchedBooks, setSearchedBooks] = useState([]);
-  /*const Signup = () => {
-    const [formState, setFormState] = useState({ title: '',description: '', link: '' });
-  
-    const [addUser] = useMutation(ADD_USER);
-  
-    const handleFormSubmit = async (event) => {
-      event.preventDefault();
-      const { data } = await addUser({
-        variables: {
-          email: formState.email,
-          password: formState.password,
-          username: formState.username,
-        },
-      });
-      Auth.login(data.addUser.token);
-  
-    };*/
   const news = {
     title: "",
     description: "",

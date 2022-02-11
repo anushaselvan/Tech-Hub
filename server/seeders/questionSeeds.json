@@ -1,15 +1,14 @@
 [
-    {
-      "questionText": "What is the difference between using list and tuple in `.loc` operator of a single-indexed pandas dataframe?",
-      "username": "Brian Kernighan"
-    },
-    {
-      "questionText": "Can We use Google Vision API for web-applications to scan QR codes/ barcodes?",
-      "username": "Max Kanat-Alexander"
-    },
-    {
-      "questionText": "Apache Pulsar: Read / Consume messages from an integer specified message id to an end message Id?",
-      "username": "Why The Lucky Stiff"
-    }
-  ]
-  
+  {
+    "questionText": "What is the difference between using list and tuple in `.loc` operator of a single-indexed pandas dataframe?",
+    "username": "Brian Kernighan"
+  },
+  {
+    "questionText": "Can We use Google Vision API for web-applications to scan QR codes/ barcodes?",
+    "username": "Max Kanat-Alexander"
+  },
+  {
+    "questionText": "Apache Pulsar: Read / Consume messages from an integer specified message id to an end message Id?",
+    "username": "Why The Lucky Stiff"
+  }
+]

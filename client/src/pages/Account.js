@@ -1,20 +1,9 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { Redirect, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import {
-  Button,
-  Avatar,
-  Form,
-  Text,
-  Box,
-  Container,
-  Badge,
-  FormLabel,
-  Heading,
-} from "@chakra-ui/react";
+import { Avatar, Text, Box, Container, Heading } from "@chakra-ui/react";
 import { QUERY_USER } from "../utils/queries";
-import Auth from "../utils/auth";
 
 const Account = () => {
   const { username: userParam } = useParams();
