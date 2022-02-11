@@ -1,14 +1,22 @@
 [
   {
-    "questionText": "What is the difference between using list and tuple in `.loc` operator of a single-indexed pandas dataframe?",
-    "username": "Brian Kernighan"
+    "questionText": "Why the navbar dropdown in bootstrap 5 doesn't work?",
+    "username": "Brian Kern"
   },
   {
-    "questionText": "Can We use Google Vision API for web-applications to scan QR codes/ barcodes?",
-    "username": "Max Kanat-Alexander"
+    "questionText": "does conda automatically prevent version conflicts?",
+    "username": "Max Alexander"
   },
   {
-    "questionText": "Apache Pulsar: Read / Consume messages from an integer specified message id to an end message Id?",
-    "username": "Why The Lucky Stiff"
+    "questionText": "How to multi select the row using the Shift + click in react js?",
+    "username": "User145"
+  },
+  {
+    "questionText": "Why is SUM() and COUNT() returning different values?",
+    "username": "Aaron"
+  },
+  {
+    "questionText": "How to reasize slides in React slick?",
+    "username": "mArY k"
   }
 ]

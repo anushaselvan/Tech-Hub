@@ -14,6 +14,7 @@ const Home = () => {
           </Box>
 
           <Box
+            className="homeStyle"
             maxW="sm"
             bg="teal"
             borderWidth="1px"
@@ -22,13 +23,14 @@ const Home = () => {
             p={8}
             overflow="hidden"
           >
-            <Heading as="h4" size="md">
+            <h4>
               A public platform building the definitive collection of coding
               questions & answers.{" "}
-            </Heading>
+            </h4>
           </Box>
 
           <Box
+            className="homeStyle"
             maxW="sm"
             bg="teal"
             borderWidth="1px"
@@ -37,12 +39,13 @@ const Home = () => {
             p={8}
             overflow="hidden"
           >
-            <Heading as="h4" size="md">
+            <h4>
               Find trusted answers faster, engage with product experts, and
               share knowledge around the technologies you use most.
-            </Heading>
+            </h4>
           </Box>
           <Box
+            className="homeStyle"
             maxW="sm"
             bg="teal"
             borderWidth="1px"
@@ -51,12 +54,13 @@ const Home = () => {
             p={8}
             overflow="hidden"
           >
-            <Heading as="h4" size="md">
+            <h4>
               A space to showcase your best/fun projects and receive feedback.
-            </Heading>
+            </h4>
           </Box>
 
           <Box
+            className="homeStyle"
             maxW="sm"
             bg="teal"
             borderWidth="1px"
@@ -65,12 +69,14 @@ const Home = () => {
             p={8}
             overflow="hidden"
           >
-            <Heading as="h4" size="md">
+            <h4>
               Increase productivity & Collaborate better in a remote-first
               world.
-            </Heading>
+            </h4>
           </Box>
-          <Box maxW="sm"> </Box>
+          <Box maxW="lg" p={40}>
+            {" "}
+          </Box>
         </SimpleGrid>
       </Container>
     </div>

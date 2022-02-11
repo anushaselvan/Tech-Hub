@@ -86,6 +86,9 @@ const Login = () => {
           </form>
         </Box>
       </Container>
+      <Box maxW="lg" p={40}>
+        {" "}
+      </Box>
     </div>
   );
 };

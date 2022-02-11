@@ -7,6 +7,7 @@ const ViewQuestion = ({ question }) => {
   return (
     <div>
       <Box
+        className="questionlist"
         bg="gray.300"
         borderRadius="lg"
         w="100%"

@@ -10,7 +10,7 @@ const News = () => {
     link: "",
   };
 
-  try {
+  /*try {
     const response = viewNews();
     if (!response.ok) {
       throw new Error("something went wrong!");
@@ -23,14 +23,14 @@ const News = () => {
     console.log(newsData);
   } catch (err) {
     console.error(err);
-  }
+  }*/
 
   return (
-    <div className="bgImage">
-      <Container maxW="60%" centerContent>
+    <div className="bgImage ">
+      <Container maxW="60%" className="news" centerContent>
         <br></br>
         <br></br>
-        <Box maxW="2000" centerContent>
+        <Box maxW="2000">
           <Box padding="4" bg="gray.100" borderRadius="lg" maxW="5xl">
             <Heading float="center" size="lg">
               Today on the web!!

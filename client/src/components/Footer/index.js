@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div class="Footer">
+    <div className="Footer">
       <h4> © Tech Hub 2022 </h4>
     </div>
   );

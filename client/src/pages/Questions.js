@@ -57,6 +57,9 @@ const Question = () => {
             + Answer
           </Button>
         </Container>
+        <Box maxW="lg" p={60}>
+          {" "}
+        </Box>
       </div>
     </main>
   );

@@ -11,7 +11,6 @@ const Account = () => {
   const { loading, data } = useQuery(QUERY_USER, {
     variables: { username: userParam },
   });
-  console.log(data);
 
   const user = data?.user || {};
 
