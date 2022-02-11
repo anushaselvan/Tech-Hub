@@ -45,6 +45,9 @@ const Account = () => {
           <Text as="i">{user.email}</Text>
         </Box>
       </Container>
+      <Box maxW="lg" p={40}>
+        {" "}
+      </Box>
     </div>
   );
 };
