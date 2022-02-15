@@ -6,7 +6,6 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
-import { ApolloLink } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
 
@@ -17,6 +16,7 @@ import Signup from "./pages/Signup";
 import Account from "./pages/Account";
 import News from "./pages/News";
 import Ask from "./pages/Ask";
+import FAQ from "./pages/FAQ";
 
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -54,6 +54,7 @@ function App() {
             <Route exact path="/account" element={<Account />} />
             <Route exact path="/news" element={<News />} />
             <Route exact path="/ask" element={<Ask />} />
+            <Route exact path="/faq" element={<FAQ />} />
             <Route exact path="/questions/:id" element={<Questions />} />
           </Routes>
           <Footer />

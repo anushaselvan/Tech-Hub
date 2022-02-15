@@ -26,11 +26,32 @@
   margin: 10px 200px;
   font-size: 20px;
 }
+.navBar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  background-color: white;
+}
+#title {
+  font-family: fantasy;
+  font-weight: lighter;
+  font-size: 25px;
+}
 .login ul {
   float: right;
-  margin: 10px 0 10px 600px;
-
+  margin: 10px 0 10px 500px;
   font-size: 20px;
+}
+#faqSpan {
+  margin: 40%;
+  font-weight: bolder;
+  font-size: 20px;
+}
+#faqTitle {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 45%;
 }
 form button {
   font-size: 1rem;
@@ -68,9 +89,10 @@ h4,
 h5,
 h6 {
   font-family: "Rubik", sans-serif;
-  font-weight: 500;
   margin: 5px 0;
-  line-height: 1.25;
+  font-weight: bolder;
+
+  line-height: 1.7;
 }
 
 h1 {

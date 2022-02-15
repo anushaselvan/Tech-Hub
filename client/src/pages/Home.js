@@ -6,13 +6,6 @@ const Home = () => {
     <div className="bgImage">
       <Container maxW="2000" centerContent>
         <SimpleGrid columns={2} spacingX="140px" spacingY="80px">
-          <Box maxW="sm" p={4}>
-            {" "}
-          </Box>
-          <Box maxW="sm" p={4}>
-            {" "}
-          </Box>
-
           <Box
             className="homeStyle"
             maxW="sm"
@@ -20,6 +13,7 @@ const Home = () => {
             borderWidth="1px"
             h="150px"
             borderRadius="lg"
+            marginTop={120}
             p={8}
             overflow="hidden"
           >
@@ -36,6 +30,7 @@ const Home = () => {
             borderWidth="1px"
             h="150px"
             borderRadius="lg"
+            marginTop={120}
             p={8}
             overflow="hidden"
           >
@@ -51,6 +46,7 @@ const Home = () => {
             borderWidth="1px"
             h="150px"
             borderRadius="lg"
+            marginBottom={130}
             p={8}
             overflow="hidden"
           >
@@ -66,6 +62,7 @@ const Home = () => {
             borderWidth="1px"
             h="150px"
             borderRadius="lg"
+            marginBottom={130}
             p={8}
             overflow="hidden"
           >
@@ -73,9 +70,6 @@ const Home = () => {
               Increase productivity & Collaborate better in a remote-first
               world.
             </h4>
-          </Box>
-          <Box maxW="lg" p={40}>
-            {" "}
           </Box>
         </SimpleGrid>
       </Container>
