@@ -47,7 +47,9 @@ const Signup = () => {
           p={4}
           color="black"
         >
-          <Link to="/login">← Go to Login</Link>
+          <Link to="/login">
+            <span className="loginLink">Go to Login</span>
+          </Link>
           <br></br>
           <br></br>
 

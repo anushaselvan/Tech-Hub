@@ -47,8 +47,12 @@
   margin: 40%;
   font-weight: bolder;
   font-size: 20px;
+  color: rgba(0, 0, 0, 0.76);
 }
-#faqTitle {
+.loginLink {
+  text-decoration: underline;
+}
+.pageTitle {
   font-size: 25px;
   font-weight: bold;
   margin: 45%;

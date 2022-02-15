@@ -46,10 +46,15 @@ const Ask = () => {
   return (
     <div className="bgImage">
       <Container maxW="50%" centerContent>
-        <h2>Ask your Q here !</h2>
-        <br></br>
         <form onSubmit={handleFormSubmit}>
-          <Box bg="gray.300" borderRadius="lg" w="100%" p={4} color="black">
+          <Box
+            bg="gray.300"
+            borderRadius="lg"
+            w="100%"
+            marginTop={20}
+            p={4}
+            color="black"
+          >
             <h2 color="black">Ask your Q here !</h2>
             <br></br>
 
@@ -69,9 +74,10 @@ const Ask = () => {
               onChange={handleChange}
             />
             <br></br>
-            <Button bg="teal" type="submit">
+            <br />
+            <button bg="teal" type="submit">
               Submit
-            </Button>
+            </button>
           </Box>
 
           {error && (

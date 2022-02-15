@@ -16,12 +16,12 @@ const QuestionList = ({ questions, title }) => {
             <Box
               bg="gray.300"
               borderRadius="lg"
-              w="100%"
+              w="700px"
               h="200px"
               p={4}
               color="black"
             >
-              <Avatar bg="teal" marginRight="10px" />
+              <Avatar bg="transparent" marginRight="10px" />
               <span fontStyle="oblique">
                 <Text as="i">{question.username}</Text>
               </span>

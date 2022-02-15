@@ -23,7 +23,7 @@ const FAQ = () => {
           p={10}
           color="black"
         >
-          <span id="faqTitle">FAQ</span>
+          <span className="pageTitle">FAQ</span>
 
           <Box h="300px" p={10}>
             <Accordion>
@@ -53,7 +53,7 @@ const FAQ = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                   Yes, you can submit your answer to any question but you have
-                  to be signed into your account.
+                  to be signed in to your account.
                 </AccordionPanel>
               </AccordionItem>
               <AccordionItem>
@@ -80,7 +80,7 @@ const FAQ = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  Yes, User details are not shared or used for any purpose other
+                  Yes, user details are not shared or used for any purpose other
                   than intended.
                 </AccordionPanel>
               </AccordionItem>
